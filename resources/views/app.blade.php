@@ -1,3 +1,19 @@
+@php
+    $url = '';
+    $auth = 'false';
+    $urlRegister = '';
+    if (Route::has('login')) {
+        if (Auth::user()){
+            $auth = 'true';
+            $url = route('login');
+        } else {
+            $url = url('/home');
+        }
+        if (Route::has('register')) {
+            $urlRegister = route('register');
+        }
+    }
+@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -19,9 +35,17 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+        <link
+            href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        />
     </head>
     <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+        <!-- <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
@@ -127,6 +151,17 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+        <div id="app"></div>
+        <script type="module">
+            window.welcomeData = {
+                isAuthenticated: "{{ $auth }}",
+                url: "{{ $url }}",
+                urlRegister: "{{ $urlRegister }}",
+                laravelVersion: "{{ Illuminate\Foundation\Application::VERSION }}",
+                phpVersion: "{{ PHP_VERSION }}"
+            }
+        </script>
+        <script src="{{ mix('js/main.js') }}" defer></script>
     </body>
 </html>

@@ -10,9 +10,38 @@
         "production": "mix --production"
     },
     "devDependencies": {
-        "axios": "^0.21",
+        "@babel/preset-react": "^7.13.13",
+        "browser-sync": "^2.26.14",
+        "browser-sync-webpack-plugin": "^2.3.0",
+        "eslint": "^7.27.0",
+        "eslint-config-airbnb": "^18.2.1",
+        "eslint-plugin-import": "^2.23.4",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-react": "^7.24.0",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "eslint-webpack-plugin": "^2.5.4",
         "laravel-mix": "^6.0.6",
-        "lodash": "^4.17.19",
         "postcss": "^8.1.14"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.3",
+        "axios": "^0.21.1",
+        "bootstrap": "^5.0.1",
+        "classnames": "^2.3.1",
+        "gulp": "^4.0.2",
+        "gulp-append-prepend": "^1.0.9",
+        "lodash": "^4.17.21",
+        "moment": "^2.29.1",
+        "node-sass": "^6.0.0",
+        "nouislider": "^15.1.1",
+        "react": "^17.0.2",
+        "react-bootstrap": "^1.6.0",
+        "react-context-devtool": "^2.0.3",
+        "react-dom": "^17.0.2",
+        "react-router": "^5.2.0",
+        "react-router-bootstrap": "^0.25.0",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "^4.0.3",
+        "reactstrap": "^8.9.0"
     }
 }
