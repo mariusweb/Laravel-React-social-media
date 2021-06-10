@@ -37,18 +37,10 @@ const container = document.getElementById('app');
 ReactDOM.render(
     <BrowserRouter>
         <Switch>
-            <Route path="/" exact component={Index}>
-                {/* <Index /> */}
-            </Route>
-            <Route path="/landing-page" component={LandingPage}>
-                {/* <LandingPage /> */}
-            </Route>
-            <Route path="/profile-page" component={ProfilePage}>
-                {/* <ProfilePage /> */}
-            </Route>
-            <Route path="/register-page" exact component={RegisterPage}>
-                {/* <RegisterPage /> */}
-            </Route>
+            <Route path="/" exact component={Index} />
+            <Route path="/landing-page" component={LandingPage} />
+            <Route path="/profile-page" component={ProfilePage} />
+            <Route path="/register-page" exact component={RegisterPage} />
             <Redirect to="/" exact component={Index} />
         </Switch>
     </BrowserRouter>,
